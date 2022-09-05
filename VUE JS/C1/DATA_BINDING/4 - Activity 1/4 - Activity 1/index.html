@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+
+  <body>
+    <div id="your-app">
+      <!--3 - Bind all  STUDENT values to the data student -->
+      <h1>This is the application of : {{student}}</h1>
+      <p>Hello world, I am {{student}}, and learning how to use vue !</p>
+      <p>Thanks for checking my app !</p>
+      <p>{{student}}</p>
+    </div>
+  </body>
+
+  <script>
+    /* 1  - Create a Vue app and mount it to your-app */
+    let app = Vue.createApp({
+      data(){
+        return {
+          student: "PHEARUN CHHUN",
+        }
+      }
+    })
+    app.mount("#your-app");
+    /* 2  - Create the date() and define a variable student */
+  </script>
+  
+</html>

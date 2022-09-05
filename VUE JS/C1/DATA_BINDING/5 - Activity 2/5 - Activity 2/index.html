@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://unpkg.com/vue@next" ></script>
+  </head>
+
+  <body>
+    <div id="your-app">
+      <!--3 - Bind all  data  values   -->
+      <h1 >My favorite color:{{color}}</h1>
+      <h1>My favorite song:{{song}}</h1>
+      <h1>My favorite teacher:{{teacher}}</h1>
+    </div>
+  </body>
+
+  <script>
+    /* 1  - Create a Vue app and mount it to your-app */
+    let app = Vue.createApp({
+      data(){
+        return{
+          color: 'red',
+          song:'ស្រលាញ់រាប់ឆ្នាំបានត្រឹមសង្សារ',
+          teacher:'Rady'
+        }
+      },
+      methods: {
+        
+      },
+    })
+    app.mount("#your-app");
+    /* 2  - Create the date() and define   variables :  color, song, teacher */
+  </script>
+</html>

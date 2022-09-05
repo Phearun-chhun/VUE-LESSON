@@ -1,0 +1,16 @@
+#app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#app button{
+    background: red;
+    border:none;
+    padding: 5px;
+    color:#fff;
+    cursor: pointer;
+}
+.img{
+    width:50px;
+    height:50px;
+}

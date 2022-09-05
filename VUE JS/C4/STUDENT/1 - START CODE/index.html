@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="container">
+        <h2>Create a todo item</h2>
+        <form >
+              <input required type="text" placeholder="Title"/>
+              <input required type="text" placeholder="Content"/>
+              <button class="btn" type="submit">Create</button>
+        </form>
+        <main>
+          <div class="main-title">
+            <h2>My todo list</h2>
+            <select>
+              <option value="all" selected>Show all</option>
+              <option value="important-only">Show only important</option>
+              <option value="not-important">Show only not important</option>
+            </select>
+          </div>
+          <div class="main-card">
+            <div class="card important">
+              <h3>Title</h3>
+              <h4>Content</h4>
+              <button class="btn">Delete</button>
+              <button class="btn important d-none">Mark Important</button>
+              <button class="btn important">Mark not important</button>
+            </div>
+            <div class="card">
+              <h3>Title</h3>
+              <h4>Content</h4>
+              <button class="btn">Delete</button>
+              <button class="btn important">Mark Important</button>
+              <button class="btn important d-none">Mark not important</button>
+            </div>
+            <div class="card important">
+              <h3>Title</h3>
+              <h4>Content</h4>
+              <button class="btn">Delete</button>
+              <button class="btn important d-none">Mark Important</button>
+              <button class="btn important">Mark not important</button>
+            </div>
+            <div class="card">
+              <h3>Title</h3>
+              <h4>Content</h4>
+              <button class="btn">Delete</button>
+              <button class="btn important">Mark Important</button>
+              <button class="btn important d-none">Mark not important</button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

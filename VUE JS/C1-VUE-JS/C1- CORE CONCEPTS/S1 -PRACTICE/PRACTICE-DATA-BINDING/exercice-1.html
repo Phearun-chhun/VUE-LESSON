@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.JS Chapter 2 | Practice | Part 1 - ex1</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <h3> Using v-if, v-else directive</h3>
+        <div v-if="count > 10">
+          Count is greater than 10
+        </div>
+        <div v-else>
+            Count is equal or less than 10
+        </div>
+
+      <h3> Using v-show directive</h3>
+        <div v-show="count > 10">
+            Count is greater than 10
+        </div>
+        <div v-show="count <= 10">
+            Count is equal or less than 10
+        </div>
+
+
+    </div>
+  </body>
+
+  <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+  
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        count : 10
+      }
+    })
+  </script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue.js Chapter 2 | Pratice | Part 2</title>
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div v-cloak id="app">
+      <h1 v-html="title"></h1>
+      <div id="user info">
+        <label>First Name</label>
+        <input type="text" v-model="firstName" />
+        <label>Last Name</label>
+        <input type="text" v-model="lastName" />
+        <label>Style</label>
+        <input type="text" v-model="style" />
+      </div>
+
+      <h2 :style="style">
+        Hello {{firstName}} {{lastName}}, don't your think it's awesome ?
+      </h2>
+    </div>
+  </body>
+
+  <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        title:
+          "<strong>Vue.Js</strong> is the best <i>of the best</i>, and here is why :",
+        firstName: "",
+        lastName: "",
+        style: "",
+      },
+    });
+  </script>
+</html>

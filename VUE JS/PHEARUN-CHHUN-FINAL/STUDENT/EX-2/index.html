@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P1</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container" id="app" v-cloak>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-title">Maximum</div>
+                <div class="card-body">
+                   <h3>{{getMaxScore}}</h3>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Minimum</div>
+                <div class="card-body">
+                   <h3>{{getMinScore}}</h3>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Average</div>
+                <div class="card-body">
+                   <h3>{{averageOfScore}}</h3>
+                </div>
+            </div>
+        </div>
+        <div class="form-container">
+            <form @submit.prevent="addSubject">
+                <div class="form-group">
+                    <input type="text" placeholder="Subject name" v-model="subject">
+                    <input type="number" placeholder="Score" v-model="score">
+                    <button type="submit">Add Score</button>
+                </div>
+            </form>
+        </div>
+        <div class="result-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject Name</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody v-for="table in tables">
+                    <tr >
+                        <td> {{table.subject}}</td>
+                        <td :style="{ 'table.score < 50':color='red'}">{{table.score}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="js/app.js"></script>
+</html>

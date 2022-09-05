@@ -1,0 +1,36 @@
+body{
+    width: 60%;
+    margin: auto;
+}
+header  {
+    background: #00a300;
+    border-radius: 10px;
+}
+header h1 {
+    text-align: center;
+    padding: 20px;
+    color:#fff;
+}
+.user_goals {
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.card {
+    padding: 10px;
+    text-align: center;
+}
+.user_goals h2{
+    text-align: center;
+    font-size: 2.5rem; 
+    color:#00a300;
+    padding: 5px;
+}
+.user_goals button {
+    background: red;
+    border:none;
+    color:#fff;
+    padding: 5px;
+    cursor: pointer;
+}
+.user_goals input {
+    padding: 5px;
+}

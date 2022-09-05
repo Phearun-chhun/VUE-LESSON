@@ -1,0 +1,12 @@
+
+11-output full name using method
+ <p>Your Name: {{ outputFullname() }}</p>
+
+= check that the method is called when the name change but also when counter changes
+
+
+
+11-output full name using computed
+ <p>Your Name: {{ fullName }}</p>
+
+= check that the method is called ONLY when the name change 

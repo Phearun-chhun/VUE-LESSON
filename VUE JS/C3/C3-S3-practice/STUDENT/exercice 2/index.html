@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <div>
+        <button @click="alert">Show Alert</button>
+      </div>
+      <div>
+        <input type="text" v-on:keydown="values=$event.target.value"/>
+        <p>{{values}}</p>
+      </div>
+      <div>
+        <input type="text"  v-on:keydown.enter="values=$event.target.value"/>
+        <p>{{values}}</p>
+      </div>
+    </div>
+  </body>
+</html>

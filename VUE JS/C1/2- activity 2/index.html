@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Vue</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="form">
+        <div>
+          <input type="text" placeholder="Username..." v-model="username"/>
+        </div>
+        <div>
+          <input type="number" placeholder="Age..." v-model="age"/>
+        </div>
+      </div>
+      <ul>
+        <li v-if="age>0">
+          <span class="index">{{age}}</span>
+          <span class="name"> {{username}}</span>
+        </li>
+        <li v-else>
+          <span class="sorry" >Sorry</span>
+          <span class="message">Age must be greater than 0</span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.JS Chapter 2 | Practice | Part 1 - ex2</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <ul>
+        <!-- 1 -->
+        <li v-for="n in number">{{n}}</li>
+      </ul>
+
+      <ul>
+        <!-- 2 -->
+        <li v-for="n in countdown">{{n}}</li>
+      </ul>
+
+      <ul>
+        <!-- 3 -->
+        <li v-for="(fruit, i) in fruits">{{i}} - {{fruit}}</li>
+      </ul>
+
+      <ul>
+        <!-- 4 -->
+        <li v-for="(value, key, index) in profile">{{key}} - {{value}}</li>
+      </ul>
+    </div>
+  </body>
+
+  <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+  
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        number : 10,
+        countdown: [5, 4, 3, 2, 1],
+        fruits: ["Apple", "Banana", "Orange", "Mango", "Grapes"],
+        profile : {
+                name : 'Tushar',
+                age : '31',
+                degree : 'Masters',
+                position : 'Full Stack Developer'
+            }
+      }
+    })
+  </script>
+
+</html>

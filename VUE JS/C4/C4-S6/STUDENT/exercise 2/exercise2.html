@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue.JS Chapter 4 | Practice | exercise 2</title>
+        <link rel="stylesheet" href="exercise2.css" />
+    </head>
+    <body>
+        <div id="app">
+            <div class="search-container">
+                <input id="search" type="text" placeholder="search your favorite images" v-model="key_search">
+                <button @click="searchPhoto">Search</button>
+                <button id="clearSearch" @click="clearSearchPhoto">X</button>
+            </div>
+            <!-- Container for result of queries -->
+            <div class="container">
+                <div class='card' v-for="image of images">
+                    <img class='img' :src="image.largeImageURL">
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+     <script src="https://unpkg.com/vue@next" ></script>
+
+
+    <script>
+        const URL = "https://pixabay.com/api/?key=14001068-da63091f2a2cb98e1d7cc1d82&q="
+        var app =  Vue.createApp({
+            data() {
+                return{
+                    key_search:null,
+                    images:[],
+                }
+            },
+            methods : {
+                // YOUR CODE HERE
+                getPhoto(value){
+                    axios.get(URL+value+"&imagetype=photo").then((response) =>{
+                            this.images = response.data.hits;
+                    });      
+                },
+                searchPhoto(){
+                    if(this.key_search!==null ){
+                        // this.getPhoto(this.key_search);
+                        localStorage.setItem("key_search", JSON.stringify(this.key_search));
+                    }
+                },
+                clearSearchPhoto(){
+                    this.key_search = null;
+                    this.images = [];
+                    localStorage.clear();
+                },
+            },
+            mounted(){
+                if(JSON.parse(localStorage.getItem("key_search"))!== null){
+                    this.key_search = JSON.parse(localStorage.getItem("key_search"));
+                }
+                return this.searchPhoto();
+            }
+        });
+        app.mount("#app");
+  </script>
+
+</html>

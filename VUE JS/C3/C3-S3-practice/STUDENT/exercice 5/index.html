@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A First App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+      <style>
+        [v-cloak] {
+          display: none;
+        }
+      </style>
+  <body>
+    <div id="app" v-cloak>
+      <div>
+        <label for="goal">Goal</label>
+        <!-- <input type="text" id="goal" v-model="goal" /> -->
+        <input type="text" id="goal" v-model="goal" v-on:keydown.enter="addGoal"/>
+       
+        <!-- <button​​ @click="addGoal">Add Goal</button> -->
+      </div>
+      <ul v-for="goal in goals">
+      <li>{{goal}}<button @click="removeGoal($event)">DELETE</button></li>
+      
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+
+  </body>
+</html>

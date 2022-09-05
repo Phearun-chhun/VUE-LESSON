@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue@next"></script>
+<body>
+    <div id="app">
+        <input type="text" placeholder="Enter the title" v-model="title">
+        <div class="btn">
+            <button @click="searchImages" >Search</button>
+        </div>
+        <div class="container">
+            <div class="card" v-for="image in images"> 
+                <img :src="image.largeImageURL" class="img">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const URL = "https://pixabay.com/api/?key=14001068-da63091f2a2cb98e1d7cc1d82&q="
+const app = Vue.createApp({
+    data() {
+        return {
+            title: null,
+            images: []
+        }
+    },
+    methods: {
+        getData(value) {
+            axios.get(URL+value+"&imagetype=photo").then((response) => {
+                this.images = response.data.hits
+                console.log(this.images)
+            })
+        },
+        searchImages() { 
+            if (this.title !== null) {
+                this.getData(this.title)
+            }
+        }
+    },
+    mounted() {
+        return this.searchImages;
+    },
+})
+app.mount("#app")
+</script>
+</html>

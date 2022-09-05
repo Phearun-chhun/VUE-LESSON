@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.JS Chapter 3 | Practice | exercise4</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <img :src="images[currentImage]" width="400" height="500"><br/><br/>
+      <button @click="previousImage" class="btn btn-primary">Previous</button>
+      <button @click="nextImage" class="btn btn-primary">Next</button>
+    </div>
+  </body>
+
+  <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        images: [
+                 'https://i.imgur.com/rmydi2w.jpg', 
+                 'https://i.imgur.com/rAFqZiM.jpg', 
+                 'https://i.imgur.com/Fpw5KKY.jpg', 
+                 'https://i.imgur.com/IbYRmoW.jpg', 
+                 'https://i.imgur.com/9poVrgA.jpg'
+                 ],
+        currentImage : 0
+      },
+      methods: {
+        nextImage: function(e){
+          if(this.currentImage !== (this.images.length -1))
+            this.currentImage++;
+        },
+
+        previousImage: function(e){
+          if(this.currentImage !== 0)
+            this.currentImage--;
+      }
+      }
+    })
+  </script>
+  
+</html>

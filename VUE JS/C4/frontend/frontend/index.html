@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer>  </script>
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="app" v-cloak>
+      <div class="container">
+        <h2>Create a todo item</h2>
+        <form @submit.prevent="createTodo">
+          <input required type="text" v-model="newTitle" placeholder="Title" />
+          <input
+            required
+            type="text"
+            v-model="newContent"
+            placeholder="Content"
+          />
+          <button class="btn" type="submit">Create</button>
+        </form>
+       
+        <main>
+          <div class="main-title">
+            <h2>My todo list</h2>
+            <select v-model="filterImportant">
+              <option value="all" selected>Show all</option>
+              <option value="important-only">Show only important</option>
+              <option value="not-important">Show only not important</option>
+            </select>
+          </div>
+          <div class="main-card" v-if="todos.length > 0">
+            <div
+              v-for="(todo, index) in getFilteredTodos(filterImportant)"
+              class="card"
+              :class="getCardstyle(todo)"
+              :key="todo.id"
+            >
+              <h3>{{ todo.title }}</h3>
+              <h4>{{ todo.description }}</h4>
+              <button @click="deleteTodo(todo)" class="btn">Delete</button>
+              <button
+                v-if="!todo.important"
+                @click="markImportant(todo, true)"
+                class="btn important "
+              >
+                Mark Important
+              </button>
+              <button
+                v-else
+                @click="markImportant(todo, false)"
+                class="btn important btn-important"
+              >
+                Mark not important
+              </button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+[v-cloak] {
+    display: none;
+}
+.card-container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+.card {
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    margin-top: 10px;
+    margin-left: 10px;
+    flex:1;
+    border-top:4px solid purple;
+}
+.card-title {
+    border-bottom: 1px dotted purple;
+    padding: 5px;
+}
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-container {
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+}
+.form-group input {
+    padding: 10px;
+    margin-right: 10px;
+}
+.form-group button {
+    padding: 10px;
+    cursor: pointer;
+    border:none;
+    background: purple;
+    color: #fff;
+}
+.result-container{
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td,th {
+    border:1px solid purple;
+    padding: 10px;
+}
+thead {
+    background: #8d498d;
+    color: #fff;
+}
+.failed {
+    color:red;
+}

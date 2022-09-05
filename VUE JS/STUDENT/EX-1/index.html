@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P1</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="container" id="app" v-cloak>
+      <div class="form-container">
+        <div class="number-of-task">
+          <span class="red"></span>
+          <span class="green"></span>
+          <span class="blue"></span>
+          <span class="orange"></span>
+        </div>
+        <div class="form">
+          <div class="form-group">
+            <input type="text" placeholder="Enter task name" v-model="task_name"/>
+          </div>
+          <div class="form-group" >
+            <select v-model="select">
+              <option value="green" >Normal</option>
+              <option value="orange" >Nice to have</option>
+              <option value="red" >High</option>
+              <option value="blue" >Document</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <button @click="addTask">Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="result-container">
+        <ul >
+          <li v-for="task in list_tasks" :style="'border-left: 2px solid ' + border_left"> {{task}} </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="js/app.js"></script>
+</html>

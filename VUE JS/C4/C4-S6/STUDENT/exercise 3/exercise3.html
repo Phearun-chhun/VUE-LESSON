@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue.JS Chapter 4 | Practice | exercise 3</title>
+        <link rel="stylesheet" href="exercise3.css" />
+    </head>
+    <body>
+        <div id="app" v-cloak>
+            <div class="search-container">
+                <input id="search" type="text" placeholder="search your favorite movie" v-model="key_search">
+                <button @click="search_movie">Search</button>
+                <button id="clearSearch" @click="clearSearchMovie">Clear</button>
+            </div>
+            <!-- Container for result of queries -->    
+            <div class="movies-data" v-for="movie of movies">
+                <div class="post">
+                    <div class="post-img">
+                        <img :src="movie.Poster">
+                    </div>
+                    <div class="post-content">
+                        <h2>Title: {{movie.Title}}</h2>
+                        <p>Year: {{movie.Year}}</p>
+                        <p>Type: {{movie.Type}}</p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </body>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <script>
+        const URL = "http://www.omdbapi.com/?apikey=fab8d88e&s=";
+        var app =  Vue.createApp({
+            data (){
+                return{
+                    movies:[],
+                    key_search:null,
+                }
+            },
+            methods : {
+                search_movie(){
+                    if(this.key_search !== null){
+                        axios.get(URL+this.key_search).then((response) => {
+                                this.movies  = response.data.Search;
+                        });
+                        localStorage.setItem("key", JSON.stringify(this.key_search));
+                    };
+                },
+                 clearSearchMovie(){
+                    this.key_search = null;
+                    this.movies = [];
+                    localStorage.clear();
+                },
+            },
+         
+            mounted: function() {
+                if(JSON.parse(localStorage.getItem("key"))!== null){
+                    this.key_search = JSON.parse(localStorage.getItem("key"));
+                    this.search_movie();
+
+                }
+            },
+        });
+        app.mount("#app");
+    </script>
+</html>

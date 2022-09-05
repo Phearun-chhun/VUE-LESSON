@@ -1,0 +1,87 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.container {
+  width: 80%;
+  margin-left: 10%;
+}
+.container form {
+  display: flex;
+}
+h2 {
+  margin-top: 20px;
+}
+.btn {
+  border-radius: 5px;
+  background: red;
+  padding: 10px;
+  margin: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.container form button {
+  background: blue;
+  width: 80px;
+  margin-top: 20px;
+}
+input[type="text"],
+.main-title select {
+  width: 35%;
+  border-radius: 5px;
+  padding: 10px 0px;
+  margin-right: 20px;
+  margin-top: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.672);
+}
+input[type="text"]::placeholder {
+  font-size: 17px;
+  padding-left: 10px;
+}
+input[type="text"]:focus,
+.main-title select:focus,
+.btn:focus {
+  outline: lightblue 5px solid;
+}
+.main-title {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+.main-title select {
+  width: 25%;
+}
+select option {
+  font-size: 17px;
+}
+.main-card {
+  display: flex;
+  margin-top: 20px;
+}
+.card {
+  width: 25%;
+  background: rgb(249, 248, 248);
+  padding: 20px;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: 1px solid rgb(184, 184, 184);
+}
+h4 {
+  color: gray;
+}
+.important {
+  background: orange;
+  color: black;
+}
+[v-cloak] {
+  display: none;
+}
+.btn-important{
+  background: white;
+}

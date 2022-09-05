@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+    <style >
+      [v-cloak]{
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app" v-cloak>
+      <img :src="images[currentImage]" width="800" height="490"  /><br /><br />
+      <button @click="previousImage" v-bind:disabled="currentImage===0">Previous</button>
+      <button @click="nextImage" v-bind:disabled="currentImage === (images.length-1)">Next</button>
+    </div>
+  </body>
+</html>

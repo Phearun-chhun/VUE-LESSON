@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ex2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div id="app">
+            <button>Show alter</button>
+            <input type="text"  v-on:keydown="values=$event.target.value">
+            <p>{{values}}</p>
+            <input type="text"  v-on:keydown.enter="values=$event.target.value">
+            <p>{{values}}</p>
+        </div>
+    </body>
+    <script src="https://unpkg.com/vue@next" ></script>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    // input1:"",
+                    // input2:"",
+                    values:""
+                }
+            },
+            methods:{
+
+            }
+        });
+        app.mount("#app");
+    </script>
+</html>

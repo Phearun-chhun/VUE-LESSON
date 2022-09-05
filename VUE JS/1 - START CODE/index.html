@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="container">
+        <h2>Create a todo item</h2>
+        <form @submit.prevent="createTodo">
+          <input required type="text" placeholder="Title" v-model="title" />
+          <input required type="text" placeholder="Content" v-model="content" />
+          <button class="btn" type="submit">Create</button>
+        </form>
+        <main>
+          <div class="main-title">
+            <h2>My todo list</h2>
+            <select v-model="showSelected">
+              <option v-for="option in showOptions" :value="option.value">
+                {{ option.show }}
+              </option>
+            </select>
+
+          </div>
+          <div class="main-card">
+            <div
+              class="card"
+              v-for="(list,i) of showList"
+              :class="{important:list.important}"
+            >
+              <h3>{{list.title}}</h3>
+              <h4>{{list.content}}</h4>
+              <button class="btn" :id="list.id" @click="deleteList(i)">
+                Delete
+              </button>
+              <button
+                class="btn important"
+                :id="list.id"
+                :class="{d_none:list.important}"
+                @click="markImportant(i)"
+              >
+                Mark Important
+              </button>
+              <button
+                class="btn notImportant"
+                :id="list.id"
+                :class="{d_none:!list.important}"
+                @click="markNotImportant(i)"
+              >
+                Mark not important
+              </button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

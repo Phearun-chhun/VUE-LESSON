@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+      <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="container">
+        <h2>Create a todo item</h2>
+        <form @submit.prevent="addTask">
+              <input required type="text" placeholder="Title" v-model="title"/>
+              <input required type="text" placeholder="Content" v-model="content"/>
+              <button class="btn" >Create</button>
+        </form>
+        <main>
+          <div class="main-title">  
+            <h2>My todo list</h2>
+            <select v-model="select">
+              <option value="all" selected >Show all</option>
+              <option value="important-only" >Show only important</option>
+              <option value="not-important" >Show only not important</option>
+            </select>
+          </div>
+          <div class="main-card">
+            <div class="card" :class="{important:todo.status}"  v-for="(todo,i) of showList"> 
+              <h3>{{todo.title}}</h3>
+              <h4>{{todo.content}}</h4>
+              <button class="btn" @click="deleteTask(todo.id) " >Delete</button>
+              <button class="btn-important" @click="markImportant(todo.id)" v-if="!todo.status" >Mark Important</button>
+              <button class="btn-notimportant" @click="markNotImportant(todo.id)" v-else>Mark not important</button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+
+START CLASS
+- Just  show them the problem with JS
+
+
+END CLASS
+- at the end of session : they should transform it using VUE 

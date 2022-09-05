@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://unpkg.com/vue@next" defer></script>
+        <script src="app.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>Vue Course Goals</h1>
+        </header>
+        <section id="user_goal" class="user_goals">
+            <div class="card">
+                <h2>My course goals</h2> 
+                <hr>
+                <input type="text" v-model="your_goal">
+                <button @click="addGoal">Add Goal</button>
+                <div class="text">
+                    <p v-if="your_goals.length === 0">No goals have been added yet - please start adding some!</p>
+                    <p v-else v-for="(goal,id) of your_goals" :id="goal.id" style="background-color: lightgreen; padding:5px;" @click="removeGoal($event)"> 
+                        {{goal}}.{{id}}
+                    </p>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

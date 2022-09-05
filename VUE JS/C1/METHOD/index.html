@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pu Run</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 200px;
+            /* background: #00befd; */
+        }
+        button{
+            background: green;
+            color:white;
+            margin: 10px;
+            cursor: pointer;
+        }
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <!-- <button @click="toggle()">Toggle</button>
+        <div v-if="isShow" class="box">1</div>
+        <p>{{getObjuective()}}</p>
+        <button @click="add()">Add</button>
+        <button @click="reduce()">Reduce</button>
+        <p>Result {{result}}</p>
+        <input type="text" id="name" v-model="user_name">
+        <button @click="">Reset input</button>
+        <p>Your name: {{user_name}}</p>
+        <input type="text"  @input="setName($event)">
+        <button @click="setName()">Show message on console</button>
+        <p>message: {{message}}</p> -->
+        <!-- <div class="box" v-if="score== 100">A</div>
+        <div class="box" v-else-if="score== 90">B</div>
+        <div class="box" v-else-if="score== 80">C</div>
+        <div class="box" v-else-if="score== 70">D</div>
+        <div class="box" v-else-if="score== 60">E</div>
+        <div class="box" v-else="score== 49">F</div> -->
+        <!-- <input type="number" id="goal" v-model="goal">
+        <button @click="getGoal()" >Add Goal</button>
+        <p v-if="goal <= 0">{{goals}}</p>
+        <p v-else>{{goal}}</p> -->
+        <!-- <p>{{values}}</p> -->
+
+        <!-- <input type="text" v-model="name">
+        <input type="text" v-model="age"> -->
+        <!-- <p>{{name}}</p>
+        <ul>
+            <li v-for="array of arr">{{array}}</li>
+        </ul>
+        <input type="text" v-model="goal">
+        <button @click="addGoal()" >Add Goal</button>
+        <ul  v-for="k of goals">
+            <li>{{k}}</li>
+        </ul> -->
+        <!-- <a :href="link">Google</a> -->
+        <!-- <img :src="image" alt="" width="100" height="100"> -->
+        <input type="text" v-model="message">
+        <p v-if=" message>5 ">Alert if message size has more than 5 characters</p>
+        <!-- Last Name:<input type="text" v-model="lastname"> -->
+        <!-- Style: <input type="text" v-model="style"> -->
+        <!-- <p v-bind:style="style">{{firstname}} {{lastname}} </p> -->
+    </div>
+</body>
+<script src="https://unpkg.com/vue@next"></script>
+<script>
+    const app = Vue.createApp({
+        data(){
+            return{
+                // isShow:false,
+                // isShow1:false,
+                // result :0,
+                // user_name:"",
+                // message:"",
+                // score:49,
+                // goals:"No goals have been added yet. Please start adding some!",
+                // goal:null,
+                // values:null,
+                // values:"Phearun",
+                // name:"Phearun",
+                // arr:["a", "b", "c", "d", "e", "f"],
+                // goals:[]
+                link:"https://google.com/search",
+                image:"https://img.freepik.com/free-vector/cute-panda-with-bamboo_138676-3053.jpg?w=2000%5C",
+                message:null,
+            }
+        },
+        methods: {
+        //     toggle(){
+        //         // if(this.isShow){
+        //         //     this.isShow=false;
+        //         // }else{
+        //         //     this.isShow=true;
+        //         // }
+        //         this.isShow=! this.isShow;
+        //     },
+        //     getObjuective(){
+        //         if(this.batch == 'batch 2021'){
+        //             return 'learn vue js';
+        //         }else{
+        //             return "I don't know"
+        //         }
+        //     },
+        //     add(){
+        //        this.result+= 10;
+        //         return  this.result;
+        //     },
+        //     reduce(){
+        //         this.result -= 5;
+        //         return  + this.result;
+        //     },
+        //   setName($event){
+        //     return this.message = event.target.value;
+        //   }
+        // getGoal() { 
+        //  if(this.goal !=""){
+        //     this.values = this.goal;
+        // }}
+            // addGoal(){
+            //     if(this.goal !== null){
+            //         this.goals.push(this.goal);
+            //         this.goal = null;
+            //     }
+            // }
+       
+        }
+    })
+    app.mount("#app");
+</script>
+</html>

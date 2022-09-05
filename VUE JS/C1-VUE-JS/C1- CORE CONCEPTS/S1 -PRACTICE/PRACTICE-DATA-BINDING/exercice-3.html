@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.JS Chapter 2 | Practice | Part 1</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <h1 v-show = "showTitle" v-text = "title"></h1>
+      <ul v-if="is_auth">
+        <li v-for="teacher in teachers">name : {{teacher.name}}</li>
+      </ul>
+      <h2 v-else>Sorry you are not authorized !</h2>
+
+    </div>
+  </body>
+
+  <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        title : "My list of teachers",
+        showTitle : true,
+        teachers : [
+          {name : "Clément"},
+          {name : "Rady"},
+          {name : "Ronan"},
+          {name : "Edouard"},
+          {name : "Sokea"},
+          {name : "Him"}],
+        is_auth : localStorage.getItem("username") === "Jonathan",
+      }
+    })
+  </script>
+  
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex1</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="exercise">
+      <div class="form-container">
+        <div class="form-group">
+          <input
+            v-model="value1"
+            type="number"
+            placeholder="Value 1"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            v-model="value2"
+            type="number"
+            placeholder="Value 2"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            v-model="operation"
+            type="radio"
+            value="add"
+            name="compute"
+            id="add"
+          />
+          <label for="add">Add</label>
+          <input
+            v-model="operation"
+            type="radio"
+            value="multiply"
+            name="compute"
+            id="multiply"
+          />
+          <label for="multiply">Multiply</label>
+        </div>
+        <div class="form-group">
+          <button @click="computeOperation" type="button">compute</button>
+        </div>
+        <div class="form-group">
+          <p>{{result}}</p>
+        </div>
+      </div>
+    </div>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <script src="ex1.js"></script>
+  </body>
+</html>

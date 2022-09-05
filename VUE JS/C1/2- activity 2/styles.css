@@ -1,0 +1,54 @@
+body {
+  background: #eec;
+  font-family: sans-serif;
+}
+#app {
+  width: 30%;
+  margin: auto;
+  margin-top: 100px;
+}
+ul {
+  margin: 0;
+  list-style-type: none;
+}
+li {
+  padding: 0px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  margin-top: 10px;
+  border-radius: 40px;
+  align-items: center;
+}
+.index {
+  background: #14e4e4;
+  padding: 10px;
+  color: #fff;
+}
+.name {
+  padding: 10px;
+}
+.age {
+  background: teal;
+  padding: 10px;
+  color: #fff;
+  border-radius: 40px;
+}
+.form {
+  text-align: center;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+.sorry {
+  padding: 10px;
+  background: red;
+  color: #fff;
+}
+.message {
+  font-size: 14px;
+  padding: 10px;
+}

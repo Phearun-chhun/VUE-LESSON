@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex4</title>
+</head>
+<body>
+    <div id="app">
+        <img :src="images[currentImage]" style="width:450px ;height:450px;"><br><br>
+        <button @click="previousImage" :disabled="currentImage==0 ">Previous</button>
+        <button @click="nextImage" :disabled="currentImage==(images.length-1)">Next</button>
+    </div>
+</body>
+<script src="https://unpkg.com/vue@next" ></script>
+<script>
+const app = Vue.createApp({
+    data(){
+        return {
+            images:[
+                "https://images6.fanpop.com/image/photos/41100000/-Cute-Little-Kitten-cats-41100525-1920-1280.jpg",
+                "https://images6.fanpop.com/image/photos/40200000/Kitten-cats-40265046-1920-1200.jpg",
+                "https://images4.fanpop.com/image/photos/14700000/Attack-cats-14749836-1600-1200.jpg",
+                "https://images2.fanpop.com/image/photos/9400000/Funny-Cats-cats-9473111-1600-1200.jpg",
+                "https://images6.fanpop.com/image/photos/40700000/Cats-cats-40762265-268-268.gif",
+            ],
+            currentImage:0
+        }
+    },
+    methods:{
+        previousImage(){
+            if(this.currentImage !== 0){
+                this.currentImage --;
+            }
+        },
+        nextImage(){
+            if(this.currentImage!=(this.images.length-1)){
+                this.currentImage++;
+        }
+    }
+    }
+});
+app.mount("#app")
+</script>
+</html>
